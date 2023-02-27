@@ -1,0 +1,55 @@
+2023/02/25 08:10:41.399 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] before process started.
+2023/02/25 08:10:59.138 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] main process started.
+2023/02/25 08:10:59.162 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] after process started.
+2023/02/25 08:11:28.632 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] before process started.
+2023/02/25 08:11:30.695 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] main process started.
+2023/02/25 08:11:30.727 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] after process started.
+2023/02/25 08:11:46.846 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] before process started.
+2023/02/25 08:11:56.089 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] main process started.
+2023/02/25 08:11:56.121 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] after process started.
+2023/02/25 08:16:37.819 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] before process started.
+2023/02/25 08:16:48.717 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] main process started.
+2023/02/25 08:16:48.722 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] after process started.
+2023/02/25 08:17:13.919 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] before process started.
+2023/02/25 08:17:15.355 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] main process started.
+2023/02/25 08:17:15.359 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] after process started.
+2023/02/25 08:17:28.574 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] before process started.
+2023/02/25 08:17:45.622 [ERROR] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] 
+class java.nio.file.NoSuchFileException:/Applications/Eclipse_2022-03.app/Contents/workspace/method-utils-v2/src/main/java/com/sono/myproj/process/utils/ReplacedWordUtils.java
+java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:218)
+java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422)
+java.base/java.nio.file.Files.newInputStream(Files.java:160)
+java.base/java.nio.file.Files.newBufferedReader(Files.java:2922)
+java.base/java.nio.file.Files.readAllLines(Files.java:3412)
+java.base/java.nio.file.Files.readAllLines(Files.java:3453)
+com.sono.myproj.process.logic.MethodUtilsBusinessLogic.getFileStringFromInputUrl(MethodUtilsBusinessLogic.java:127)
+com.sono.myproj.process.logic.MethodUtilsBusinessLogic.beforeProcess(MethodUtilsBusinessLogic.java:78)
+com.sono.myproj.process.logic.MethodUtilsBusinessLogic.executeMethodUtils(MethodUtilsBusinessLogic.java:54)
+com.sono.myproj.process.impl.MethodUtilsProcessImpl.execute(MethodUtilsProcessImpl.java:22)
+com.sono.myproj.execute.ExecuteMainProcess.executeMainProcess(ExecuteMainProcess.java:20)
+com.sono.myproj.Main.main(Main.java:21)
+
+2023/02/25 08:20:05.012 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] before process started.
+2023/02/25 08:20:11.871 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] main process started.
+2023/02/25 08:20:11.885 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] after process started.
+2023/02/25 08:22:37.287 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] before process started.
+2023/02/25 08:22:45.321 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] main process started.
+2023/02/25 08:22:45.332 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] after process started.
+2023/02/25 12:42:09.291 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] before process started.
+2023/02/25 12:42:16.269 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] main process started.
+2023/02/25 12:42:31.232 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] after process started.
+2023/02/25 16:15:51.240 [INFO] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] before process started.
+2023/02/25 16:15:53.799 [ERROR] [com.sono.myproj.process.logic.MethodUtilsBusinessLogic] 
+class java.lang.IllegalArgumentException:URL Validation Failed. Not Proper Url.
+com.sono.myproj.process.logic.MethodUtilsBusinessLogic.getFileStringFromInputUrl(MethodUtilsBusinessLogic.java:127)
+com.sono.myproj.process.logic.MethodUtilsBusinessLogic.beforeProcess(MethodUtilsBusinessLogic.java:80)
+com.sono.myproj.process.logic.MethodUtilsBusinessLogic.executeMethodUtils(MethodUtilsBusinessLogic.java:56)
+com.sono.myproj.process.impl.MethodUtilsProcessImpl.execute(MethodUtilsProcessImpl.java:22)
+com.sono.myproj.execute.ExecuteMainProcess.executeMainProcess(ExecuteMainProcess.java:20)
+com.sono.myproj.Main.main(Main.java:21)
+
