@@ -120,23 +120,20 @@ public class ParenthesisUtils {
 		for (int i = startIndex - 1; i >= 0; i--) {
 			var target = targetList.get(i);
 			if (target.equals("{") || target.equals("}")) {
-				if (leftParenthesisCount == rightParenthesisCount
-						&& (leftParenthesisCount != 0 && rightParenthesisCount != 0)) {
-					break;
-				} else {
-					leftAndRightDto = new LeftAndRightParenthesisDto(0, 0);
-					break;
-				}
-
+				break;
 			}
 			if (target.equals("(")) {
 				leftParenthesisCount++;
-				leftAndRightDto.setLeftParenthesisPosition(i);
 			} else if (target.equals(")")) {
 				rightParenthesisCount++;
 				leftAndRightDto.setRightParenthesisPosition(i);
 			} else {
 				continue;
+			}
+			if (leftParenthesisCount == rightParenthesisCount
+					&& (leftParenthesisCount != 0 && rightParenthesisCount != 0)) {
+				leftAndRightDto.setLeftParenthesisPosition(i);
+				break;
 			}
 
 		}

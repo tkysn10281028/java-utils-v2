@@ -18,9 +18,6 @@ public class SampleGenerateFirstAndLastParenthesisCount {
 			}catch{
 				EXCEPTION;
 			}
-		H.forEach((x)->{
-			CONTENT;
-		});
 		}
 	}
 }

@@ -37,4 +37,10 @@ public class ReplaceWordUtils {
 	public String replaceQuotedWord(String str) {
 		return str.replaceAll("\".*\"", "\"\"").replaceAll("\'.*\'", "\'\'");
 	}
+
+	public String replaceTabAndLined(String text) {
+		var noTabWord = StringUtils.replace(text, "\t", " ");
+		var noLinedWord = StringUtils.replace(noTabWord, "\n", " ");
+		return noLinedWord;
+	}
 }

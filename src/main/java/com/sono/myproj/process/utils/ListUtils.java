@@ -60,7 +60,9 @@ public class ListUtils {
 		if (startIndex <= 0) {
 			return targetList.get(startIndex);
 		} else {
+			var x = targetList.get(startIndex - 1);
 			return targetList.get(startIndex - 1);
+
 		}
 	}
 
@@ -81,6 +83,9 @@ public class ListUtils {
 			parenthesisDto.setLeftParenthesisPosition(startIndex);
 		}
 		for (int i = parenthesisDto.getLeftParenthesisPosition(); i >= 0; i--) {
+			if (targetList.get(i).equals("{") || targetList.get(i).equals("{")) {
+				break;
+			}
 			var evacuationIndex = i;
 			var optWord = reservedWordDto.getReservedWordList().stream()
 					.filter(word -> word.equals(targetList.get(evacuationIndex))).findAny();

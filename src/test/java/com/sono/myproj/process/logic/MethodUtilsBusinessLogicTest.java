@@ -121,6 +121,7 @@ public class MethodUtilsBusinessLogicTest {
 				.generatePrgElementDtoList(generatePrgElementList(generateInputWordFromFileUrlForTest(url5)));
 		var result3 = utilsBusinessLogic
 				.generatePrgElementDtoList(generatePrgElementList(generateInputWordFromFileUrlForTest(url6)));
+		var x = generatePrgElementList(generateInputWordFromFileUrlForTest(url7));
 		var result4 = utilsBusinessLogic
 				.generatePrgElementDtoList(generatePrgElementList(generateInputWordFromFileUrlForTest(url7)));
 		var result5 = utilsBusinessLogic
@@ -261,8 +262,8 @@ public class MethodUtilsBusinessLogicTest {
 				.getElementName();
 		var setPrgElementInfo7 = result7.get(0).getPrgElementList().get(9).getElementName();
 		var addIntoPrgElementInfoList7 = result7.get(0).getPrgElementList().get(10).getElementName();
-		var lambda7 = result7.get(0).getPrgElementList().get(11).getPrgElementList().get(0);
-		var initEnvAndPrintFirstLog7 = result7.get(0).getPrgElementList().get(12).getElementName();
+		var lambda7 = result7.get(0).getPrgElementList().get(10).getPrgElementList().get(0).getElementName();
+		var initEnvAndPrintFirstLog7 = result7.get(0).getPrgElementList().get(11).getElementName();
 		assertEquals("MethodUtilsBusinessLogic", className7);
 		assertEquals("executeMethodUtils", executeMethodUtils7);
 		assertEquals("try", try7);
@@ -670,29 +671,28 @@ public class MethodUtilsBusinessLogicTest {
 		var list = generatePrgElementList(generateInputWordFromFileUrlForTest(url));
 		var result1 = parenthesisUtils.generateFirstAndLastParenthesisCount(list, 3);
 		var result2 = parenthesisUtils.generateFirstAndLastParenthesisCount(list, 9);
-		var result3 = parenthesisUtils.generateFirstAndLastParenthesisCount(list, 19);
-		var result4 = parenthesisUtils.generateFirstAndLastParenthesisCount(list, 30);
+		var result3 = parenthesisUtils.generateFirstAndLastParenthesisCount(list, 18);
+		var result4 = parenthesisUtils.generateFirstAndLastParenthesisCount(list, 29);
 		var result5 = parenthesisUtils.generateFirstAndLastParenthesisCount(list, 38);
 		var result6 = parenthesisUtils.generateFirstAndLastParenthesisCount(list, 46);
-		var result7 = parenthesisUtils.generateFirstAndLastParenthesisCount(list, 48);
-		var result8 = parenthesisUtils.generateFirstAndLastParenthesisCount(list, 52);
-		var result9 = parenthesisUtils.generateFirstAndLastParenthesisCount(list, 61);
+		var result7 = parenthesisUtils.generateFirstAndLastParenthesisCount(list, 49);
+		var result8 = parenthesisUtils.generateFirstAndLastParenthesisCount(list, 53);
 
 		assertEquals(new LeftAndRightParenthesisDto(0, 0), result1);
 		assertEquals(new LeftAndRightParenthesisDto(7, 8), result2);
-		assertEquals(new LeftAndRightParenthesisDto(15, 18), result3);
-		assertEquals(new LeftAndRightParenthesisDto(25, 29), result4);
+		assertEquals(new LeftAndRightParenthesisDto(14, 17), result3);
+		assertEquals(new LeftAndRightParenthesisDto(24, 28), result4);
 		assertEquals(new LeftAndRightParenthesisDto(36, 37), result5);
 		assertEquals(new LeftAndRightParenthesisDto(40, 45), result6);
 		assertEquals(new LeftAndRightParenthesisDto(0, 0), result7);
 		assertEquals(new LeftAndRightParenthesisDto(0, 0), result8);
-		assertEquals(new LeftAndRightParenthesisDto(0, 0), result9);
 
 	}
 
 	private List<String> generatePrgElementList(String text) {
 		var spaced = parenthesisUtils.replaceParenthesisIntoSpaced(text);
-		return Arrays.asList(spaced.split(" ")).stream().filter(word -> !word.equals("")).collect(Collectors.toList());
+		return Arrays.asList(replaceWordUtils.replaceTabAndLined(spaced).split(" ")).stream()
+				.filter(word -> !word.equals("")).collect(Collectors.toList());
 	}
 
 	private String generateInputWordFromFileUrlForTest(String url) throws IOException {

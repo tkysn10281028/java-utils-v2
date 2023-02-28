@@ -166,7 +166,7 @@ public class MethodUtilsBusinessLogic implements BusinessLogic {
 	 * @return
 	 */
 	protected List<PrgElementInfoDto> generatePrgElementDtoList(List<String> prgElementList) {
-		this.cursor = 0;
+		this.cursor = -1;
 		var resultlist = generatePrgElementDtoListRecursion(prgElementList, 0, 0);
 		return resultlist;
 	}
@@ -234,9 +234,12 @@ public class MethodUtilsBusinessLogic implements BusinessLogic {
 			Integer hierarchyCount) {
 
 		var prgElementInfoListForOutput = new ArrayList<PrgElementInfoDto>();
-		prgElementInfoDto.setElementName(generateElementName(targetList, startIndex, hierarchyCount));
-		prgElementInfoDto.setSignature(generateElementSignature(targetList, startIndex, hierarchyCount));
-		prgElementInfoDto.setReturnVal(generateReturnVal(targetList, startIndex, hierarchyCount));
+		prgElementInfoDto.setElementName(
+				generateElementName(targetList, startIndex > 0 ? startIndex - 1 : startIndex, hierarchyCount));
+		prgElementInfoDto.setSignature(
+				generateElementSignature(targetList, startIndex > 0 ? startIndex - 1 : startIndex, hierarchyCount));
+		prgElementInfoDto.setReturnVal(
+				generateReturnVal(targetList, startIndex > 0 ? startIndex - 1 : startIndex, hierarchyCount));
 		prgElementInfoDto.setPrgBody(generatePrgBody(targetList, startIndex, presentindex));
 		prgElementInfoDto.setPrgElementList(prgElementInfoDtos);
 		prgElementInfoListForOutput.add(prgElementInfoDto);
@@ -293,11 +296,12 @@ public class MethodUtilsBusinessLogic implements BusinessLogic {
 			return null;
 		}
 		switch (hierarchyCount) {
-		case 0:
+		case 0, 1:
 			return null;
-		case 1:
-			return listUtils.findClassAfterWord(targetList, startIndex);
 		case 2:
+			return listUtils.findClassAfterWord(targetList, startIndex);
+		case 3:
+			var x = parenthesisUtils.generateFirstAndLastParenthesisCount(targetList, startIndex);
 			return listUtils.findOnePreviousWord(targetList, parenthesisUtils
 					.generateFirstAndLastParenthesisCount(targetList, startIndex).getLeftParenthesisPosition());
 		default:
